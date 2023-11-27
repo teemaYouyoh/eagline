@@ -200,6 +200,12 @@
 
     &__button {
       text-align: center;
+
+      button {
+        &::before {
+          transform: translate(0, 110%);
+        }
+      }
     }
 
   }
