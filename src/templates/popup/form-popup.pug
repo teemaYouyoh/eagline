@@ -1,0 +1,25 @@
+.action
+  .action__image 
+    img(src=require("@/assets/img/popup-img-1.jpg"), alt="popup-img-1")
+  .action__main
+    p.action__title.text-with-before Заполните форму, и мы свяжемся с вами в ближайшее время.
+
+    form#form-popup.form.action__form(action='post') 
+
+      div
+        label(for='popup-name') 
+          input#popup-name(type='text', name='name', placeholder='Ваше имя: *')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      div
+        label(for='popup-telephone') 
+          input#popup-telephone(type='tel', name='telephone', placeholder='Номер телефона: *')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      div
+        label(for='popup-request') 
+          textarea#popup-request(name='request', placeholder='Сообщение')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      p
+        button(type='submit') Отправить

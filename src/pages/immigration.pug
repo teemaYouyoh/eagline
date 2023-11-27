@@ -1,0 +1,55 @@
+-
+  const innerBanner = {
+    image: '@/assets/img/immigration/inner-banner.jpg',
+    title: 'Імміграція і легалізація'
+  };
+
+  const breadcrumbsName = 'Імміграція';
+
+  const separateSection = {
+    image: '@/assets/img/immigration/separate.jpg',
+    alt: 'Іміграція',
+    hasButton: 'true',
+    description: `
+      <p>
+        Переїзд в іншу країну – це не просте рішення, яке потребує юридичного супроводження і підтримки в новій країні. 
+      </p>
+      <br/>
+      <p>
+        Наша команда фахівців з імміграційного права допоможе вам найкращим чином забезпечити переїзд вашої родини чи ваших працівників.
+      </p>
+      <br/>
+      <p>
+        Ми можемо розпочати вас супроводжувати навіть коли ви ще знаходитесь на батьківщині. Наше завдання зробити процес переїзду безпечним і комфортним. Ми беремо на себе всю роботу, пов'язану з отриманням дозволів в прикордонній, міграційній, податковій та інших органах влади, щоб зробити ваше перебування в країні легальним і безпечним. 
+      </p>
+    `
+  };
+
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title Persona Patman - Immigration
+
+    link(rel='stylesheet', href=require('@/styles/pages/immigration.scss'))
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/breadcrumbs.pug
+
+    include @/templates/banner-inner.pug
+
+    include @/templates/separate.pug
+
+    include @/templates/immigration-services.pug
+
+    include @/templates/steps.pug
+
+    include @/templates/services.pug
+
+    include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('../index.ts')) 

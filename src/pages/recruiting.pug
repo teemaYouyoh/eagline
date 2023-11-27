@@ -1,0 +1,63 @@
+-
+  const innerBanner = {
+    image: '@/assets/img/recruiting/inner-banner.jpg',
+    title: 'Рекрутинг і адаптація'
+  };
+
+  const breadcrumbsName = 'Рекрутинг';
+
+  const separateSection = {
+    image: '@/assets/img/recruiting/separate.jpg',
+    alt: 'Рекрутінг',
+    hasButton: 'true',
+    description: `
+      <p>
+        Працевлаштування іноземців – це ваша конкурентна перевага і можливість швидко найти необхідних працівників. Але для успішного залучення іноземців вам необхідна професійна підтримка рекрутинової компанії.
+      </p>
+      <br/>
+      <p>
+        Якщо ви роботодавець - ми допоможемо вам знайти працівників-іноземців, оскільки ми беремо на себе всю роботу з відбору персоналу тих професій, в яких у вас є потреба.
+      </p>
+      <br/>
+      <p>
+        А якщо ви самі бажаєте працювати за кордоном - ми також допоможемо вам легально і безпечно працевлаштуватись.
+      </p>
+      <br/>
+      <p>
+        Ми беремо на себе всю роботу, пов'язану з юридичними і організаційними питаннями працевлаштування іноземців.
+      </p>
+      <br/>
+      <p>
+        За останні 5 років ми працевлаштували понад 6000 людей в 30 компаніях Європейського Союзу, переважно в країнах Балтії, Чехії, Німеччині і Скандинавських країнах.
+      </p>
+    `
+  };
+
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title Persona Patman - Recruiting
+
+    link(rel='stylesheet', href=require('@/styles/pages/recruiting.scss'))
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/breadcrumbs.pug
+
+    include @/templates/banner-inner.pug
+
+    include @/templates/separate.pug
+
+    include @/templates/recruiting-services.pug
+
+    include @/templates/steps.pug
+
+    include @/templates/services.pug
+
+    include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('../index.ts')) 

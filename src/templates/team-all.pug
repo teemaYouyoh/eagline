@@ -1,0 +1,84 @@
+-
+  const teamLists = [
+    {
+      title: 'Партнери',
+      list: [
+        {
+          image: "@/assets/img/team/team-1.jpg",
+          name: 'Ім’я + прізвище',
+          post: 'CEO'
+        },
+        {
+          image: "@/assets/img/team/team-2.jpg",
+          name: 'Ім’я + прізвище',
+          post: 'CEO'
+        },
+        {
+          image: "@/assets/img/team/team-3.jpg",
+          name: 'Ім’я + прізвище',
+          post: 'CEO'
+        },
+        {
+          image: "@/assets/img/team/team-4.jpg",
+          name: 'Ім’я + прізвище',
+          post: 'CEO'
+        },
+        {
+          image: "@/assets/img/team/team-1.jpg",
+          name: 'Ім’я + прізвище',
+          post: 'CEO'
+        }
+      ]
+    },
+    {
+      title: 'Юристи',
+      list: [
+        {
+          image: "@/assets/img/team/team-1.jpg",
+          name: 'Ім’я + прізвище',
+          post: 'CEO'
+        },
+        {
+          image: "@/assets/img/team/team-2.jpg",
+          name: 'Ім’я + прізвище',
+          post: 'CEO'
+        },
+        {
+          image: "@/assets/img/team/team-3.jpg",
+          name: 'Ім’я + прізвище',
+          post: 'CEO'
+        },
+        {
+          image: "@/assets/img/team/team-4.jpg",
+          name: 'Ім’я + прізвище',
+          post: 'CEO'
+        },
+        {
+          image: "@/assets/img/team/team-1.jpg",
+          name: 'Ім’я + прізвище',
+          post: 'CEO'
+        }
+      ]
+    }
+  ];
+
+each list in teamLists
+  section.team
+    ._container
+      .team__wrapper
+        h2.team__title= list.title
+
+        ul.team-list
+          each item, index in list.list
+            li
+              a.team-list__item(href='./team-article.html')
+                span.team-img
+                  span.team-img__container
+                    img(
+                      src=require(`${item.image}`),
+                      alt=`team-${index + 1}`,
+                      loading='lazy'
+                    )
+
+                span.team-list__name= item.name
+                span.team-list__post= item.post

@@ -1,0 +1,51 @@
+@import '../base';
+
+.types {
+
+  @include viewport-desktop {
+    padding: px-to-rem(60) 0;
+  }
+  @include viewport-tablet {
+    padding: px-to-rem(40) 0;
+  }
+  @include viewport-phone {
+    padding: px-to-rem(30) 0;
+  }
+  
+  //.types__wrapper 
+  &__wrapper {
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(60);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(36);
+      }
+    }
+  }
+
+  // .types__info
+  &__info {
+    text-align: center;
+  }
+  
+  //.types__title 
+  &__title {
+    @include text-heading-2;
+  }
+
+  //.types__main 
+  &__main {
+    > * + * {
+      @include viewport-phone {
+        margin-top: px-to-rem(30);
+      }
+    }
+  }
+  
+  //.types__item
+  &__item {
+
+  } 
+ 
+}

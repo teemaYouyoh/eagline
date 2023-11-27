@@ -1,0 +1,18 @@
+@import '../styles';
+
+//.news-article
+.news-article {
+
+    padding: 60px 0 0;
+
+    //.news-article__divider
+    &__divider {
+        p {
+            font-weight: 600;
+
+            &:before {
+                top: 7px;
+            }
+        }
+    }
+}

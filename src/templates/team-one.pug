@@ -1,0 +1,95 @@
+-
+  const team = {
+    image: '@/assets/img/team/team-article.jpg',
+    socials: [
+      {
+        image: '@/assets/img/facebook.svg',
+        href: 'https://www.facebook.com/',
+        alt: 'facebook'
+      },
+      {
+        image: '@/assets/img/linkedin.svg',
+        href: 'https://www.linkedin.com/',
+        alt: 'linkedin'
+      }
+    ],
+    contacts: [
+      {
+        isTargetBlank: 'false',
+        image: '@/assets/img/contacts-1.svg',
+        href: 'tel:+37066787227',
+        title: '+370 66 78 7227'
+      },
+      {
+        isTargetBlank: 'false',
+        image: '@/assets/img/contacts-2.svg',
+        href: 'mailto:info@rcpersona.com',
+        title: 'info@rcpersona.com'
+      },
+      {
+        isTargetBlank: 'true',
+        image: '@/assets/img/contacts-3.svg',
+        href: 'https://goo.gl/maps/seLEXai7oZapeHc29',
+        title: 'Riga. str. example n1. buil 2. ap10'
+      },
+    ],
+    title: 'Тимур Макєєв',
+    subtitle: 'CEO',
+    description: [
+      `
+        <p>
+          Our client engaged us to obtain lawful permanent residence for its new CEO, not only to ensure the stability of the company, but also to enable his spouse to legally work as soon as possible.
+        </p>
+      `,
+      `
+        <p>
+          Our client engaged us to obtain lawful permanent residence for its new CEO, not only to ensure the stability of the company, but also to enable his spouse to legally work as soon as possible. The most common route for obtaining a green card requires advertising the job in a variety of channels, including the job title, requirements and company name. 
+        </p>
+      `,
+    ]
+  };
+
+section.team-one
+  ._container.team-one__container
+    .team-one__warpper
+      .team-img.team-one__img
+        .team-img__container
+          img(
+            src=require(`${team.image}`),
+            alt=`${team.title}`,
+            loading='lazy'
+          )
+
+      .team-one__content
+        .team-one__header
+          .team-one__title__container
+            h1.team-one__title= team.title
+            p.team-one__subtitle.mobile= team.subtitle
+
+          ul.team-one-socials
+            each item in team.socials
+              li
+                a.team-one-socials__item(
+                  href=`${item.href}`,
+                  target='_blank',
+                  rel='noreferrer'
+                )
+                  span.team-one-socials__img
+                    img(src=require(`${item.image}`), alt=`${item.alt}`)
+
+        p.team-one__subtitle.desktop= team.subtitle
+
+        .team-one__description!= team.description[0]
+
+        .contacts-item.team-one__contacts
+          each item, index in team.contacts
+            a.contacts-item__link(
+              href=`${item.href}`,
+              target=`${item.isTargetBlank === 'true' ? '_blank' : '_self'}`
+            )
+              span.contacts-item__label
+                img(src=require(`${item.image}`), alt=`contact-${index + 1}`)
+
+              span.contacts-item__text= item.title
+
+        .team-one__description!= team.description[1]

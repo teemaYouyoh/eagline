@@ -1,0 +1,141 @@
+-
+  const innerBanner = {
+    image: '@/assets/img/transport-logistic/banner-inner.jpg',
+    title: 'Обработка особых <br/>и негабаритных грузов',
+    subtitle: 'Специализированная погрузочно-разгрузочная площадка <br/>и хранение на складе в Гдыне',
+  };
+
+  const breadcrumbsName = 'Імміграція';
+
+  const separateSection = {
+    image: '@/assets/img/immigration/separate.jpg',
+    alt: 'Іміграція',
+    hasButton: 'true',
+    description: `
+      <p>
+        Переїзд в іншу країну – це не просте рішення, яке потребує юридичного супроводження і підтримки в новій країні. 
+      </p>
+      <br/>
+      <p>
+        Наша команда фахівців з імміграційного права допоможе вам найкращим чином забезпечити переїзд вашої родини чи ваших працівників.
+      </p>
+      <br/>
+      <p>
+        Ми можемо розпочати вас супроводжувати навіть коли ви ще знаходитесь на батьківщині. Наше завдання зробити процес переїзду безпечним і комфортним. Ми беремо на себе всю роботу, пов'язану з отриманням дозволів в прикордонній, міграційній, податковій та інших органах влади, щоб зробити ваше перебування в країні легальним і безпечним. 
+      </p>
+    `
+  };
+
+  const typesCards = [
+    {
+      image: '@/assets/img/services/types-1.jpg',
+      title: 'Легковые автомобили',
+      typography: `
+        <p>
+          В частности, новые и поврежденные авто из США, Канады и пр.
+        </p>
+      `,
+      link: {
+        name: '',
+        href: '',
+      }
+    },
+    {
+      image: '@/assets/img/services/types-2.jpg',
+      title: 'Шины',
+      typography: `
+       <p>
+          Размещаем на специальных стеллажах шины легковых 
+          и грузовых машин.
+        </p>
+      `,
+      link: {
+        name: '',
+        href: '',
+      }
+    },
+    {
+      image: '@/assets/img/services/types-3.jpg',
+      title: 'Крупногабаритные <br/>паллеты',
+      typography: `
+        <p>
+          Также обработаем ящики массой до 15 тонн.
+        </p>
+      `,
+      link: {
+        name: '',
+        href: '',
+      }
+    },
+    {
+      image: '@/assets/img/services/types-2.jpg',
+      title: 'Металлическая <br/>продукция',
+      typography: `
+        <p>
+          Сюда относятся трубы, рельсы, стальной прокат в рулонах.
+        </p>
+      `,
+      link: {
+        name: '',
+        href: '',
+      }
+    },
+    {
+      image: '@/assets/img/services/types-3.jpg',
+      title: 'Специальная техника',
+      typography: `
+        <p>
+          Разместим строительную 
+          и сельскохозяйственную технику.
+        </p>
+      `,
+      link: {
+        name: '',
+        href: '',
+      }
+    },
+    {
+      image: '@/assets/img/services/types-4.jpg',
+      title: 'Лодки',
+      typography: `
+        <p>
+          Обслуживаем водный транспорт разных размеров. 
+        </p>
+      `,
+      link: {
+        name: '',
+        href: '',
+      }
+    },
+  ];
+
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title Обработка особых и негабаритных грузов - EAGLINE
+
+    link(rel='stylesheet', href=require('@/styles/pages/cargo-handling.scss'))
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/banner-inner.pug
+
+    include @/templates/about-service-inner.pug
+
+    include @/templates/statistic.pug
+
+    include @/templates/types.pug
+
+    include @/templates/services-slider.pug
+
+    include @/templates/logos.pug
+
+    include @/templates/contacts.pug
+
+    include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('../index.ts')) 

@@ -1,0 +1,38 @@
+-
+  const aboutInfoList = [
+    {
+      label: '@/assets/img/about/label-1.svg',
+      text: 'Собственная площадка, транспорт и оборудование для стандартных, нестандартных и негабаритных грузов.',
+    },
+    {
+      label: '@/assets/img/about/label-2.svg',
+      text: 'Индивидуальные ВЭД решения «под ключ» — поиск продукции, заключение контракта, сопровождение.',
+    },
+    {
+      label: '@/assets/img/about/label-3.svg',
+      text: 'Индивидуальные предложения под предпочтения и возможности каждого клиента.',
+    },
+  ];
+
+
+section.about-info
+  ._container 
+    .about-info__wrapper
+      .about-info__col
+        .about-info__title!= 'О компании <br/><strong><span>EAG</span>LINE</strong>'
+
+        .about-info__text.text-with-before!= '<strong><span>EAG</span>LINE</strong> — это свыше 20 лет практики в сфере логистики и экспедирования на международном уровне. Главный вектор работы — морские перевозки и обработка грузов в портов Польши, Румынии, Турции, Нидерландов, Германии. Мы имеем партнеров в США, Колумбии, Боливии, Румынии, Грузии, Украине и других странах СНГ.'
+
+        .about-info__label 
+          img(src=require("@/assets/img/about-label.svg"), alt="about-label", loading='lazy')
+      .about-info__col
+        .about-info__img 
+          img(src=require("@/assets/img/about/about.jpg"), alt="about", loading='lazy')
+      
+      .about-info__col
+        .about-info__list
+          each info in aboutInfoList
+            .item.about-info__item
+              .item__label
+                img(src=require(info.label), alt="label", loading='lazy')
+              p.item__text!= info.text

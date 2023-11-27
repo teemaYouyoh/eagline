@@ -1,0 +1,118 @@
+-
+  const breadcrumbsName = 'Для урядів';
+
+  const classTypography = 'news-article__typography'
+
+  const typography = [
+    {
+      type: 'text',
+      data: `
+        <p>
+          Успішна міграційна політика є однією з ключових умов розвитку суспільства і зростання економіки країни. В епоху низьких темпів народжуваності і високих темпів еміграції лише політика залучення іммігрантів і стимулювання повернення діаспори є ключової умовою до збільшення населення країни і продовження зростання її економіки. Всі успішні країни світу – це країни з активною імміграційною політикою. Адже для країни іммігранти – це нові споживачі, нова робоча сила, нові платники податків, нові роботодавці, а також нові інвестори.
+        </p>
+        <br/>
+        <p>
+          Для органів влади дуже важливо, щоб імміграція була легальною, сприяла залученню робочої сили і їх значних фінансових ресурсів. Кожен орган влади потребує допомоги в організаційній і юридичній консультації щодо структурування програм залучення іммігрантів і повернення діаспори.
+        </p>
+        <br/>
+        <p>
+          Команда Persona Patman має досвід розробки програм залучення іммігрантів і повернення своїх громадян, а також програми співпраці з діаспорою. 
+        </p>
+        <br/>
+        <p>
+          Ми готові долучитись до розробки загальнодержавних, галузевих, секторальних, регіональних програм співпраці з мігрантами.
+        </p>
+        <br/>
+        <p>
+          Будь-ласка, заповніть форму і ми зв’яжемось з вами.
+        </p>
+      `
+    },
+  ];
+
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title Persona Patman - Для урядів
+
+    link(rel='stylesheet', href=require('@/styles/pages/info-for.scss'))
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/breadcrumbs.pug
+
+    section.news-article
+      ._container.news-article__container
+        .news-article__wrapper
+          .news-article__media
+            img(
+              src=require('@/assets/img/news/article-banner.jpg'),
+              alt='article-banner',
+              loading='lazy'
+            )
+
+          h1.news-article__title Для урядів
+
+    include @/layout/typography.pug
+
+    section.news-article-form
+      ._container.news-article__container
+        .news-article-form__wrapper
+          .contacts-action.info-for__action
+            .contacts-action__container
+              form#form-info-for.form.contacts__form(action='post') 
+                //- div
+                //-   label(for='info-for-select') 
+                //-     strong Тип звернення
+                //-     select#info-for-select(name='select', form='form-info-for')
+                //-       option(value='value 1', selected) value 1
+                //-       option(value='value 2') value 2
+                //-       option(value='value 3') value 3
+                //-     span.wpcf7-not-valid-tip Невірний формат
+
+                div
+                  label(for='info-for-name') 
+                    strong Ім’я
+                    input#info-for-name(type='text', name='name')
+                    span.wpcf7-not-valid-tip Невірний формат
+
+                  label(for='info-for-lastname') 
+                    strong Прізвище
+                    input#info-for-lastname(type='text', name='lastname')
+                    span.wpcf7-not-valid-tip Невірний формат
+
+                div
+                  label(for='info-for-email') 
+                    strong Email
+                    input#info-for-email(type='email', name='email')
+                    span.wpcf7-not-valid-tip Невірний формат
+
+                  label(for='info-for-telephone') 
+                    strong Телефон
+                    input#info-for-telephone(type='tel', name='telephone')
+                    span.wpcf7-not-valid-tip Невірний формат
+
+                div
+                  label(for='info-for-request') 
+                    strong Чим ми можемо допомогти
+                    textarea#info-for-request(name='request')
+                    span.wpcf7-not-valid-tip Невірний формат
+
+                p
+                  button(type='submit') Відправити
+
+                  span Натискаючи на кнопку "Відправити" ви погоджуєтесь з
+                    a(
+                      href='./document.html',
+                      target='_blank',
+                      rel='noreferrer'
+                    ) умовами конфіденційності
+                    span компанії Persona Patman
+
+    include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('../index.ts')) 

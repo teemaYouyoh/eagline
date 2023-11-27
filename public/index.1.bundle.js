@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpersona_patman=self.webpackChunkpersona_patman||[]).push([[873],{},a=>{a.O(0,[216,607],(()=>(3607,a(a.s=3607)))),a.O()}]);

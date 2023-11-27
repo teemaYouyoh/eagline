@@ -1,0 +1,128 @@
+@import '../base';
+
+.about-service {
+
+  @include viewport-desktop {
+    padding: px-to-rem(120) 0 px-to-rem(60);
+  }
+  @include viewport-tablet {
+    padding: px-to-rem(80) 0 px-to-rem(40);
+  }
+  @include viewport-phone {
+    padding: px-to-rem(60) 0 px-to-rem(30);
+  }
+  
+  //.about-service__wrapper 
+  &__wrapper {
+  }
+
+  // .about-service__info
+  &__info {
+    display: flex;
+    
+    @include viewport-tablet-min {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include viewport-phone {
+      flex-direction: column;
+      justify-content: flex-start;;
+    }
+
+    > * + * {
+      @include viewport-tablet-min {
+        margin-left: 46px;
+      }
+  
+      @include viewport-phone {
+        margin-top: 24px;
+      }
+    }
+  }
+  
+  //.about-service__col
+  &__col{
+
+    &:first-child {
+      min-width: 29%;
+    }
+
+    &:last-child {
+    }
+   
+  }
+
+  //.about-service__title 
+  &__title {
+    @include text-heading-2;
+    @include viewport-tablet-min {
+      max-width: 286px;
+    }
+  }
+
+  //.about-service__adv
+  &__adv{
+    margin-top: 32px;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-grey);
+
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+
+    @at-root .about-service.about-service-inner & {
+      max-width: 530px;
+    }
+
+    > * + * {
+      margin-left: 14px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 600;
+
+    strong {
+      font-weight: 700;
+      color: var(--color-blue-100);
+    }
+
+    &:before {
+      top: 12px;
+    }
+  }
+
+
+  //.about-service__content
+  &__content {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+
+    > * + * {
+      margin-top: 12px;
+    }
+  }
+  
+  //.about-service__main 
+  &__main {
+    > * + * {
+      @include viewport-phone {
+        margin-top: px-to-rem(30);
+      }
+    }
+  }
+  
+  //.about-service__item
+  &__item {
+
+  } 
+ 
+}

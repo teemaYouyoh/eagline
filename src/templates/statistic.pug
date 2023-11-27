@@ -1,0 +1,36 @@
+-
+  const statisticList = [
+    {
+      title: `Страхование`,
+      text: `Все грузы защищены на время обработки, оформления на таможне, перевозке.`,
+      image: '@/assets/img/statistics/statistics-1.svg',
+    },
+    {
+      title: `Без ограничений`,
+      text: `Работаем с любыми типами и объемами грузов, включая ADR всех типов опасности.`,
+      image: '@/assets/img/statistics/statistics-2.svg',
+    },
+    {
+      title: `Широкий автопарк`,
+      text: `Подберем транспорт и контейнеры строго под тип и формат груза.`,
+      image: '@/assets/img/statistics/statistics-3.svg',
+    },
+    {
+      title: `Мониторинг`,
+      text: `У каждого клиента есть возможность вести мониторинг выполнения заказа.`,
+      image: '@/assets/img/statistics/statistics-4.svg',
+    },
+  ];
+
+section.statistic
+  ._container
+    .statistic__wrapper
+      h2.statistic__title!= 'Самая надежная логистика <br/>в Польше'
+
+      ul.statistic-list.counter-container
+        each item in statisticList
+          li.statistic-list__item
+            .statistic-list__image
+              img(src=require(item.image), alt=item.title)
+            p.statistic-list__name!= item.title
+            p.statistic-list__text!= item.text

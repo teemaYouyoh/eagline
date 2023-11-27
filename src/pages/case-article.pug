@@ -1,0 +1,23 @@
+-
+  const breadcrumbsName = 'Кейси / Іммігаційні кейси';
+
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title Persona Patman - Persona Patman допомогла іноземцю отримати громадянство України
+
+    link(rel='stylesheet', href=require('@/styles/pages/case-article.scss'))
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/breadcrumbs.pug
+
+    include @/templates/case-one.pug
+
+    include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('../index.ts')) 

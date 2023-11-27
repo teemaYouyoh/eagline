@@ -1,0 +1,116 @@
+-
+  const innerBanner = {
+    image: '@/assets/img/transport-logistic/banner-inner.jpg',
+    title: 'Транспортная логистика',
+    subtitle: 'Обработка, перевалка, доставка любых грузов по всему миру',
+  };
+
+  const breadcrumbsName = 'Імміграція';
+
+  const separateSection = {
+    image: '@/assets/img/immigration/separate.jpg',
+    alt: 'Іміграція',
+    hasButton: 'true',
+    description: `
+      <p>
+        Переїзд в іншу країну – це не просте рішення, яке потребує юридичного супроводження і підтримки в новій країні. 
+      </p>
+      <br/>
+      <p>
+        Наша команда фахівців з імміграційного права допоможе вам найкращим чином забезпечити переїзд вашої родини чи ваших працівників.
+      </p>
+      <br/>
+      <p>
+        Ми можемо розпочати вас супроводжувати навіть коли ви ще знаходитесь на батьківщині. Наше завдання зробити процес переїзду безпечним і комфортним. Ми беремо на себе всю роботу, пов'язану з отриманням дозволів в прикордонній, міграційній, податковій та інших органах влади, щоб зробити ваше перебування в країні легальним і безпечним. 
+      </p>
+    `
+  };
+
+  const typesCards = [
+    {
+      image: '@/assets/img/services/types-1.jpg',
+      title: 'Морской <br/>транспорт',
+      typography: `
+        <p>
+          Основное направление компании с агентами  <br/>
+          по всему миру.
+        </p>
+      `,
+      link: {
+        name: '',
+        href: '',
+      }
+    },
+    {
+      image: '@/assets/img/services/types-2.jpg',
+      title: 'Автомобильный <br/>транспорт',
+      typography: `
+       <p>
+         Широкий автопарк 
+         и площадка для обработки любых грузов, включая ADR.
+        </p>
+      `,
+      link: {
+        name: '',
+        href: '',
+      }
+    },
+    {
+      image: '@/assets/img/services/types-3.jpg',
+      title: 'Авиаперевозки',
+      typography: `
+        <p>
+          Быстрая и безопасная доставка грузов даже 
+          в отдаленные места.
+        </p>
+      `,
+      link: {
+        name: '',
+        href: '',
+      }
+    },
+    {
+      image: '@/assets/img/services/types-4.jpg',
+      title: 'Перевозка <br/>наливных грузов',
+      typography: `
+        <p>
+          Делаем флекси-танки для автомобильных и контейнерных перевозок.
+        </p>
+      `,
+      link: {
+        name: '',
+        href: '',
+      }
+    },
+  ];
+
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title Транспортная логистика - EAGLINE
+
+    link(rel='stylesheet', href=require('@/styles/pages/transport-logistic.scss'))
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/banner-inner.pug
+
+    include @/templates/about-service.pug
+
+    include @/templates/statistic.pug
+
+    include @/templates/types.pug
+
+    include @/templates/services-slider.pug
+
+    include @/templates/logos.pug
+
+    include @/templates/contacts.pug
+
+    include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('../index.ts')) 

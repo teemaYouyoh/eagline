@@ -1,0 +1,58 @@
+-
+  const stepsList = [
+    {
+      title: 'Вітальний дзвінок',
+      description: 'для обговорення <br/>бажаних умов співпраці'
+    },
+    {
+      title: 'Допомога з підготовкою <br/>пакету документів',
+      description: 'для роботи за кордоном'
+    },
+    {
+      title: 'Допомога в  легалізації за кордоном',
+      description: 'і супровід для отримання посвідок / дозволу на роботу'
+    },
+    {
+      title: 'Адаптація і <br/>юридична підтримка',
+      description: 'за кордоном при необхідності'
+    },
+  ];
+
+section.steps
+  ._container
+    .steps__wrapper
+      .steps__header
+        h2.steps__title Як ми працюємо
+
+        button.button-dark.desktop.steps__button.popup-open(
+          data-popup='_popup-form'
+        )
+          span Отримати консультацію
+
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 13L18.17 13L15.59 15.59L17 17L22 12L17 7L15.59 8.41L18.17 11L2 11L2 13Z" fill="white"/>
+          </svg>
+
+      ul.steps-list
+        each item, index in stepsList
+          li.steps-list__item
+            .steps-list-label(aria-label=`${index + 1} крок`) 
+              .steps-list-label__main(aria-hidden='true')
+                .steps-list-label__img
+                  img(src=require('@/assets/img/star.svg'), alt='step')
+
+                p.steps-list-label__number= index + 1
+
+              p.steps-list-label__title(aria-hidden='true') крок
+
+            .steps-list__main
+              h3.steps-list__title!= item.title
+              p.steps-list__description!= item.description
+
+      .steps__footer
+        button.button-dark.steps__button.popup-open(data-popup='_popup-form')
+          span Отримати консультацію
+
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 13L18.17 13L15.59 15.59L17 17L22 12L17 7L15.59 8.41L18.17 11L2 11L2 13Z" fill="white"/>
+          </svg>

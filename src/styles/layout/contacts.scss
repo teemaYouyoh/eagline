@@ -1,0 +1,164 @@
+@import '../base';
+
+.contacts {
+  //.contacts__banner 
+  // &__banner {
+  // }
+
+  //.contacts__wrapper 
+  &__wrapper {
+
+    display: flex;
+  
+    @include viewport-tablet-min {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include viewport-phone {
+      flex-direction: column;
+    }
+
+    > * + * {
+
+      @include viewport-tablet-min {
+        margin-left: px-to-rem(58);
+      }
+      
+      @include viewport-phone {
+        margin-top: px-to-rem(52);
+      }
+    }
+  }
+
+  //.contacts__image 
+  &__image {
+    img {
+      width: 100%;
+    }
+  }
+  
+  //.contacts__main 
+  &__main {
+    display: flex;
+    flex-direction: column;
+
+    @include viewport-desktop {
+      width: 40%;
+    }
+    @include viewport-tablet {
+      width: 50%;
+    }
+    @include viewport-phone {
+      width: 100%;
+    }
+
+    > * + * {
+      margin-top: px-to-rem(14);
+    }
+  }
+
+  //.contacts__title 
+  &__title {
+    @include text-heading-2;
+  }
+
+  //.contacts__text
+  &__text{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+
+    &:before {
+      top: 12px;
+    }
+  }
+  
+  //.contacts-list 
+  &-list {
+    width: 100%;
+
+    > * + * {
+      margin-top: px-to-rem(16);
+    }
+
+    //.contacts-list__item 
+    // &__item {
+    // }
+  }
+  
+  //.contacts-item 
+  &-item {
+    display: flex;
+    align-items: center;
+
+    > * + * {
+      margin-left: px-to-rem(16);
+    }
+  
+    //.contacts-item__link 
+    &__link {
+      display: flex;
+      align-items: center;
+  
+      @include transition(color 0.4s);
+      text-decoration: unset;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      color: var(--color-black);
+  
+      @include hover-focus-visible {
+        @include non-mobile-device {
+          color: var(--color-red);
+        }
+      }
+  
+      > * + * {
+        margin-left: px-to-rem(14);
+      }
+    }
+  
+    //.contacts-item__label 
+    &__label {
+      flex-shrink: 0;
+      width: 100%;
+      width: px-to-rem(26);
+      height: px-to-rem(26);
+      background-color: var(--color-red);
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      // img {
+      //   width: 100%;
+      //   width: 10px;
+      //   height: 100%;
+      // }
+    }
+
+    //.contacts-item__text 
+    &__text {
+      span {
+        font-weight: 400;
+      }
+    }
+    
+    //.contacts-item__socials 
+    &__socials {
+      > * + * {
+        margin-left: px-to-rem(14);
+      }
+    }
+    //.contacts-item__social 
+    &__social {
+     text-decoration: underline;
+    }
+  }
+
+    //.contacts__button
+    &__button {
+      margin-top: 22px;
+    }
+}

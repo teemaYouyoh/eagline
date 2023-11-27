@@ -1,0 +1,57 @@
+-
+  const parthershipDescription = `
+    <p>
+      Ми завжди прагнемо працювати з найкращими та найталановитішими.  
+    </p>
+    <br/>
+    <p>
+      Щоб приєднатися до нашої зростаючої команди професіоналів або стати компанією-партнером, будь-ласка, заповніть форму нижче.
+    </p>
+  `;
+
+article.form-partnership
+  ._container.form-partnership__container
+    .form-partnership__wrapper
+      .form-partnership__description!= parthershipDescription
+
+      form.form.form-partnership__form(action='post') 
+        div
+          label(for='partner-name') 
+            strong Ім’я
+            input#partner-name(type='text', name='name')
+            span.wpcf7-not-valid-tip Невірний формат
+
+          label(for='partner-lastname') 
+            strong Прізвище
+            input#partner-lastname(type='text', name='lastname')
+            span.wpcf7-not-valid-tip Невірний формат
+
+        div
+          label(for='partner-email') 
+            strong Email
+            input#partner-email(type='email', name='email')
+            span.wpcf7-not-valid-tip Невірний формат
+
+          label(for='partner-telephone') 
+            strong Телефон
+            input#partner-telephone(type='tel', name='telephone')
+            span.wpcf7-not-valid-tip Невірний формат
+
+        div
+          label(for='partner-company') 
+            strong Назва компанії
+            input#partner-company(type='text', name='company')
+            span.wpcf7-not-valid-tip Невірний формат
+
+        div
+          label(for='partner-request') 
+            strong Повідомлення
+            textarea#partner-request(name='request')
+            span.wpcf7-not-valid-tip Невірний формат
+
+        p
+          button(type='submit') Відправити запит
+
+          span Натискаючи на кнопку "Відправити" ви погоджуєтесь з
+            a(href='./document.html', target='_blank', rel='noreferrer') умовами конфіденційності
+            span компанії Persona Patman

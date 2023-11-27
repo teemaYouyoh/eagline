@@ -1,0 +1,51 @@
+-
+  const innerBanner = {
+    image: '@/assets/img/cases/inner-banner.jpg',
+    title: 'Практичні кейси'
+  };
+
+  const breadcrumbsName = 'Кейси';
+
+  const separateSection = {
+    image: '@/assets/img/cases/separate.jpg',
+    alt: 'Кейси',
+    hasButton: 'false',
+    description: `
+      <p>
+        Ми щодня працюємо, щоб зробити процес міграції та працевлшатування за кордоном комфортним і легальним.
+      </p>
+      <br/>
+      <p>
+        Комусь ми допомагаємо вирішити проблему, а комусь - втілити мрію.
+      </p>
+      <br/>
+      <p>
+        Тому тут ми ділимось практичним досвідом допомоги людям і компаніям вирішити всі завдання, повязані з переїздом і працевлаштування іноземців.
+      </p>
+    `
+  };
+
+doctype html
+html(lang='en')
+  head
+    include @/layout/head.pug
+
+    title Persona Patman - Cases
+
+    link(rel='stylesheet', href=require('@/styles/pages/cases.scss'))
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/breadcrumbs.pug
+
+    include @/templates/banner-inner.pug
+
+    //- include @/templates/separate.pug
+
+    include @/templates/case-list.pug
+
+    include @/layout/footer.pug
+
+    //- script(src=require('@/scripts/video.ts')) 
+    script(src=require('../index.ts')) 

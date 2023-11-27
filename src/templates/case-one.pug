@@ -1,0 +1,57 @@
+-
+  const caseOneCList = [
+    {
+      image: '@/assets/img/cases/case-article-1.svg',
+      title: 'Челендж',
+      description: `
+        <p>
+          Батько нашого клієнта був громадянином іншої країни. Але він народився в Україні, в м. Харкові у 1976 році. Така обставина відповідно до закону є підставою для набуття громадянства України. 
+        </p>
+      `
+    },
+    {
+      image: '@/assets/img/cases/case-article-2.svg',
+      title: 'Рішення',
+      description: `
+        <p>
+          Команда Persona Patman надала правову допомогу іноземцю у отриманні громадянства України за територіальним походженням. Відповідно до статті 8 Закону України «Про громадянство України» іноземці або особи без громадянства мають право на набуття громадянства України за територіальним походженням у випадку, якщо така особа чи хоча б один з її батьків, дід чи баба, рідні (повнорідні та неповнорідні) брат чи сестра, син чи дочка, онук чи онука народилися або постійно проживали до 24 серпня 1991 року на території, яка стала територією України відповідно до Закону України Закону України «Про правонаступництво України». Спеціалісти Persona Patman (i) допомогли клієнту зібрати необхідні підтверджуючі документи, (ii) підготували та (iii) подали заяву про набуття громадянства до територіального органу ДМС. 
+        </p>
+      `
+    },
+    {
+      image: '@/assets/img/cases/case-article-3.svg',
+      title: 'Результат',
+      description: `
+        <p>
+          Орган ДМС задовольнив заяву нашого клієнта, зареєстрував його громадянином України та видав Тимчасове посвідчення громадянина. Наразі наші спеціалісти допомагають клієнту із збором та підготовкою документів для припинення іноземного громадянства.
+        </p>
+      `
+    }
+  ];
+
+section.case-one
+  ._container.case-one__container
+    .case-one__wrapper
+      .case-one__header
+        h1.case-one__title Persona Patman допомогла іноземцю отримати громадянство України
+
+        .date.case-one__date
+          .date__label
+            img(src=require('@/assets/img/date.svg'), alt='date')
+
+          time.date__value(datatime='2023-07-22') 22.07.2023
+
+      .case-one-list
+        each item in caseOneCList
+          .case-one-list__item
+            .case-one-list-header
+              .case-one-list-header__container
+                .case-one-list__label
+                  img(src=require(`${item.image}`), alt=`${item.title}`)
+
+                p.case-one-list__title= item.title
+
+                .case-one-list__star(aria-hidden='true')
+                  img(src=require('@/assets/img/star.svg'), alt='star')
+
+            .case-one-list__description.typography!= item.description

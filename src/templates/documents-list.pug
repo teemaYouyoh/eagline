@@ -1,0 +1,80 @@
+-
+  const documentsList1 = [
+    {
+      'title': 'Поручение на выполнение транспортно-экспедиторской операции',
+      'link': '#',
+    },
+    {
+      'title': 'Общие польские экспедиторские условия 2010',
+      'link': '#',
+    },
+    {
+      'title': 'Инкотермс 2020',
+      'link': '#',
+    },
+    {
+      'title': 'GDPR',
+      'link': '#',
+    },
+    {
+      'title': 'Грант',
+      'link': '#',
+    },
+    {
+      'title': 'Форма жалобы (ENG)',
+      'link': '#',
+    },
+  ]
+  const documentsList2 = [
+    {
+      'title': 'Доверенность на таможенное оформление',
+      'link': '#',
+    },
+    {
+      'title': '— инструкции по заполнению Доверенность на таможенное оформление',
+      'link': '#',
+    },
+    {
+      'title': 'Доверенность LS Airport Services',
+      'link': '#',
+    },
+    {
+      'title': 'Доверенность WELCOME Airport Services',
+      'link': '#',
+    },
+    {
+      'title': 'Доверенность AIRNET Service — Разовая',
+      'link': '#',
+    },
+    {
+      'title': 'Доверенность AIRNET Service',
+      'link': '#',
+    },
+    {
+      'title': 'Доверенность DHL EXPRESS',
+      'link': '#',
+    },
+  ]
+
+section.documents
+  ._container
+    .documents__wrapper
+      .documents__info
+        p.documents__subtitle.text-with-before!= 'Благодаря этой вкладке Вы загрузите все интересующие Вас документы.Среди них Вы найдёте, в ряду прочего, общие польские условия экспедирования, заказ на экспедирование, Инкотермс 2020.'
+
+      .documents__main
+        div.documents-list
+          h2.documents-list__title Важные документы и формы
+
+          each item, index in documentsList1
+            a.documents-item(href=item.link)
+              img(src=require('@/assets/img/pdf.svg'), alt=item.title)
+              span.documents-item__title= item.title
+
+        div.documents-list 
+          h2.documents-list__title Доверенности
+          
+          each item, index in documentsList2
+            a.documents-item(href=item.link)
+              img(src=require('@/assets/img/pdf.svg'), alt=item.title)
+              span.documents-item__title= item.title

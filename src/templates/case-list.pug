@@ -1,0 +1,55 @@
+-
+  const caseList = [
+    {
+      image: '@/assets/img/cases/case-1.jpg',
+      date: {
+        datatime: '2023-07-22',
+        title: '22.07.2023'
+      },
+      title: 'Імміграційні кейси'
+    },
+    {
+      image: '@/assets/img/cases/case-2.jpg',
+      date: {
+        datatime: '2023-07-22',
+        title: '22.07.2023'
+      },
+      title: 'Рекрутингові кейси'
+    }
+  ];
+
+.case-catalog.section
+  ._container
+    .case-catalog__wrapper
+      ul.case-catalog-list
+        //- - for(let i=0; i<3; i++)
+        each item, index in caseList
+          li
+            a.case-catalog__item(href='./case-article.html')
+              span.case-catalog-img
+                span.case-catalog-img__container
+                  img(
+                    src=require(`${item.image}`),
+                    alt=`${index + 1}`,
+                    loading='lazy'
+                  ) 
+
+              //- span.case-catalog-date.date
+              //-   span.date__label
+              //-     img(src=require('@/assets/img/date.svg'), alt='date')
+
+              //-   time.date__value(datatime=`${item.date.datetime}`)= item.date.title
+
+              span.case-catalog__title= item.title
+
+              span.case-catalog__more.link-more
+                span.link-more__text Детальніше
+
+                span.link-more__label
+                  img(
+                    src=require('@/assets/img/arrow-more.svg'),
+                    alt='possibilities-details',
+                    draggable='false'
+                  )
+
+      //- include @/templates/pagination.pug

@@ -1,0 +1,52 @@
+-
+  const menuPopupList = [
+    {
+      name: 'Главная',
+      href: '/',
+      goto: ''
+    },
+    {
+      name: 'Транспортная логистика',
+      href: './transport-logistics.html',
+      goto: ''
+    },
+    {
+      name: 'Складская логистика',
+      href: './cargo-handling.html',
+      goto: ''
+    },
+    {
+      name: 'Таможенное оформление',
+      href: './transport-logistics.html',
+      goto: ''
+    },
+    {
+      name: 'О компании',
+      href: './documents.html',
+      goto: ''
+    },
+    {
+      name: 'Контакти',
+      href: './contacts.html',
+      goto: ''
+    },
+  ];
+
+button.popup__close
+  img(src=require('@/assets/img/popup-close-black.svg'), alt='close')
+
+nav.menu
+  ul.menu-list
+    each item in menuPopupList
+      li.menu-list__item
+        a.menu__link(
+          class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+          href=`${item.href}`,
+          data-goto=`${item.goto}`
+        ) #{ item.name }
+
+ul.menu__lang.popup-menu-lang
+  li
+    p.lang-item.lang-item-current укр
+  li
+    a.lang-item(href='#') eng

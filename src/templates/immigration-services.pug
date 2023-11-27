@@ -1,0 +1,134 @@
+-
+  const immigrationCards = [
+    {
+      image: '@/assets/img/immigration/services-1.svg',
+      title: 'Візова підтримка',
+      typography: `
+        <ul>
+          <li>
+            Оформлення запрошення 
+          </li>
+          <li>
+            Запис до консульства
+          </li>
+          <li>
+            Супровід для отримання документів
+          </li>
+        </ul>
+      `,
+      link: {}
+    },
+    {
+      image: '@/assets/img/immigration/services-2.svg',
+      title: 'Дозвіл на роботу',
+      typography: `
+        <ul>
+          <li>
+            Отримання дозволу на працевлаштування
+          </li>
+          <li>
+            Оформлення індивідуального податкового номеру (ІПН)
+          </li>
+          <li>
+            Реєстрація фізичної особи-підприємця
+          </li>
+        </ul>
+      `,
+      link: {}
+    },
+    {
+      image: '@/assets/img/immigration/services-3.svg',
+      title: 'Паспортні документи',
+      typography: `
+        <ul>
+          <li>
+            Супровід для отримання паспорту і свідоцтва
+          </li>
+          <li>
+            Відновлення втраченого паспорту і свідоцтва
+          </li>
+        </ul>
+      `,
+      link: {}
+    },
+    {
+      image: '@/assets/img/immigration/services-4.svg',
+      title: 'Отримання посвідки на проживання (ПНП)',
+      typography: `
+        <ul>
+          <li>
+            Супровід у міграційній службі
+          </li>
+          <li>
+            Оформлення тимчасової та постійної ПНП
+          </li>
+        </ul>
+      `,
+      link: {}
+    },
+    {
+      image: '@/assets/img/immigration/services-5.svg',
+      title: 'Отримання громадянства країни',
+      typography: `
+        <ul>
+          <li>
+            Вибір оптимальної програми громадянства
+          </li>
+          <li>
+            Відновлення попереднього громадянства
+          </li>
+        </ul>
+      `,
+      link: {}
+    },
+    {
+      image: '@/assets/img/immigration/services-6.svg',
+      title: 'Інші послуги',
+      typography: `
+        <ul>
+          <li>
+            Супровід у міграційній, податковій і соціальній службах
+          </li>
+          <li>
+            Оформлення довідок 
+          </li>
+          <li>
+            Інші послуги з легалізації таімміграції 
+          </li>
+        </ul>
+      `,
+      link: {}
+    },
+  ];
+
+section.immigration-services
+  ._container
+    .immigration-services__wrapper
+      h2.immigration-services__title Наші міграційні та паспортні послуги
+
+      ul.immigration-services__list.cards-list
+        each item, index in immigrationCards
+          li.card
+            .card__container
+              .card__inner
+                .card__header
+                  .card__label
+                    img(
+                      src=require(`${item.image}`),
+                      alt=`possibilities-${index + 1}`
+                    )
+
+                  h3.card__title!= item.title
+
+                .card__typography!= item.typography
+
+                if item.link.name
+                  a.card-link.link-more(href=`${item.link.href}`)
+                    span.link-more__text= item.link.name
+
+                    span.link-more__label
+                      img(
+                        src=require('@/assets/img/arrow-more.svg'),
+                        alt='possibilities-details',
+                        draggable='false'
+                      )

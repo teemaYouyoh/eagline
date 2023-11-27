@@ -1,0 +1,120 @@
+-
+  const recruitingServices = [
+    {
+      isActive: 'true',
+      data: '1',
+      type: {
+        title: 'Для бізнесу',
+        label: `
+          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.24463 15.2815L10.2378 11.3914L13.652 14.0733L16.581 10.293" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="19.9954" cy="4.70027" r="1.9222" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.9243 3.62012H7.65655C4.64511 3.62012 2.77783 5.75284 2.77783 8.76428V16.8467C2.77783 19.8581 4.6085 21.9817 7.65655 21.9817H16.2607C19.2721 21.9817 21.1394 19.8581 21.1394 16.8467V9.80776" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        `
+      },
+      list: [
+        {
+          title: 'Пошук іноземних працівників',
+          description: 'для роботодавців'
+        },
+        {
+          title: 'Проведення інтерв\'ю і відбір найкращих кандидатів',
+          description: 'для роботодавців'
+        },
+        {
+          title: 'Півдготовка документів відібраних кандидатів',
+          description: 'з метою їх приїзду і працевлаштування у роботодавця'
+        },
+        {
+          title: 'Супровід і адаптація працівників',
+          description: 'після оформлення на роботу в новій країні'
+        },
+        {
+          title: 'Тренінги та релокація іноземних працівників',
+          description: 'для роботодавців'
+        },
+        {
+          title: 'Послуги аутстафингу іноземних працівників',
+          description: 'для роботодавців'
+        }
+      ]
+    },
+    {
+      isActive: 'false',
+      data: '2',
+      type: {
+        title: 'Для мігранта',
+        label: `
+          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M21.4446 16.2579C21.4446 19.836 19.336 21.9446 15.7579 21.9446H7.97173C4.38444 21.9446 2.27588 19.836 2.27588 16.2579V8.4626C2.27588 4.88444 3.59031 2.77588 7.16847 2.77588H9.16749C9.88576 2.77588 10.5621 3.11406 10.9931 3.68868L11.9059 4.90269C12.3378 5.47618 13.0135 5.81406 13.7315 5.81549H16.5611C20.1484 5.81549 21.472 7.64108 21.472 11.2923L21.4446 16.2579Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.05908 14.9891H16.6526" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        `
+      },
+      list: [
+        {
+          title: 'Пошук вакансій для працівників',
+          description: 'які бажають попрацювати за кордоном'
+        },
+        {
+          title: 'Організація інтерв\'ю для працівника',
+          description: 'з потенційними роботодавцями'
+        },
+        {
+          title: 'Допомога з підготовкою необхідних документів',
+          description: 'у випадку домовленості  з роботодавцем про працевлаштування'
+        },
+        {
+          title: 'Супровід працівника',
+          description: 'після оформлення на роботу в новій країні'
+        },
+        {
+          title: 'Адаптація і юридична допомога за кордоном',
+          description: 'при необхідності'
+        },
+      ]
+    }
+  ];
+
+section.recruiting-services
+  ._container
+    .recruiting-services__wrapper
+      h2.recruiting-services__title Наші рекрутингові послуги
+
+      .recruiting-services__main.fade-section
+        ul.fade-section__list.recruiting-services__navigation
+          each item in recruitingServices
+            li
+              button.fade-section__button.recruiting-services-button(
+                class=`${item.isActive === 'true' ? 'active' : ''}`,
+                data-item=`${item.data}`,
+                aria-label=`${item.type.title}`
+              )
+                span.recruiting-services-button__container
+                  span.recruiting-services-button__inner
+                    span.recruiting-services-button__label(aria-hidden='true')!= item.type.label
+
+                    span.recruiting-services-button__title= item.type.title
+
+                span.recruiting-services-button__arrow
+                  img(
+                    src=require('@/assets/img/recruiting/fade-arrow.svg'),
+                    alt='arrow',
+                    aria-hidden='true'
+                  )
+
+        .recruiting-services__content
+          .recruiting-services__content__inner
+            .fade-section-content
+              each item in recruitingServices
+                .fade-section-content__item(
+                  class=`${item.isActive !== 'true' ? 'unactive' : ''}`,
+                  data-item=`${item.data}`
+                )
+                  ul.recruiting-services-list
+                    each service in item.list 
+                      li.recruiting-services-list__item
+                        h3.recruiting-services-list__title= service.title
+
+                        p.recruiting-services-list__description= service.description
