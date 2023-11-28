@@ -106,9 +106,9 @@
     @include transition(transform 0.5s);
 
     @include viewport-desktop {
-      //@media (min-width: 1651px) {
-      display: none;
-      //}
+      @media (min-width: 1368px) {
+        display: none;
+      }
     }
 
     &._opened {

@@ -41,6 +41,10 @@
   //.header__logo 
   &__logo {
     flex-shrink: 0;
+
+    @include viewport-phone {
+      max-width: 92px;
+    }
   }
 
   
@@ -52,6 +56,10 @@
     > * + * {
       margin-left: px-to-rem(16);
     }
+
+    .header__phone + .menu__lang {
+      margin-right: 14px;
+    }
   }
   
   //.header__menu 
@@ -59,7 +67,7 @@
     width: 100%;
     max-width: 920px;
 
-    @include viewport-tablet-max {
+    @media (max-width: 1368px) {
       display: none;
     }
   }
@@ -103,7 +111,6 @@
   margin-right: px-to-rem(-10);
   margin-top: px-to-rem(-10);
   margin-bottom: px-to-rem(-10);
-
   padding: 7px;
   border: 1px solid #EEEEEE;
   border-radius: 50px;
@@ -118,8 +125,12 @@
     padding: 0;
     margin: 0;
     margin-top: px-to-rem(50);
-
+    border: none;
     display: flex;
+
+    .lang-item-current {
+      margin-left: 0;
+    }
 
     > * + * {
       margin-left: px-to-rem(20);
