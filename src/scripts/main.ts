@@ -48,46 +48,46 @@ export const init = () => {
   const hasError = false;
 
   if (formArr.length !== 0) {
-    formArr.forEach((form) => {
-      form.addEventListener('submit', (evt) => {
-        evt.preventDefault();
-        const inputs = Array.from(
-          form.querySelectorAll('input, textarea') as NodeListOf<
-            HTMLInputElement | HTMLTextAreaElement
-          >
-        );
+    // formArr.forEach((form) => {
+    //   form.addEventListener('submit', (evt) => {
+    //     evt.preventDefault();
+    //     const inputs = Array.from(
+    //       form.querySelectorAll('input, textarea') as NodeListOf<
+    //         HTMLInputElement | HTMLTextAreaElement
+    //       >
+    //     );
 
+    //     popups.forEach(({ timeline, isThanks, isError }) => {
+    //       if (isThanks && !hasError) {
+    //         timeline?.play();
+
+    //         if (inputs.length !== 0) {
+    //           inputs.forEach((inputProp) => {
+    //             const input = inputProp;
+    //             input.value = '';
+    //           });
+    //         }
+    //       } else if (isError && hasError) {
+    //         timeline?.play();
+    //       } else {
+    //         timeline?.reverse();
+    //       }
+    //     });
+    //   });
+    // });
+
+    document.addEventListener(
+      'wpcf7mailsent',
+      function () {
         popups.forEach(({ timeline, isThanks, isError }) => {
-          if (isThanks && !hasError) {
-            timeline?.play();
-
-            if (inputs.length !== 0) {
-              inputs.forEach((inputProp) => {
-                const input = inputProp;
-                input.value = '';
-              });
-            }
-          } else if (isError && hasError) {
+          if (isThanks) {
             timeline?.play();
           } else {
             timeline?.reverse();
           }
         });
-      });
-    });
-
-    // document.addEventListener(
-    //   'wpcf7mailsent',
-    //   function () {
-    //     popups.forEach(({ timeline, isThanksPopup }) => {
-    //       if (isThanksPopup) {
-    //         timeline.play();
-    //       } else {
-    //         timeline.reverse();
-    //       }
-    //     });
-    //   },
-    //   false
-    // );
+      },
+      false
+    );
   }
 };
