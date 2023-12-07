@@ -173,7 +173,7 @@ section,
   position: relative;
   padding-left: 44px;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     top: 8px;
@@ -186,15 +186,16 @@ section,
 
   strong {
     font-weight: 600;
+
     span {
       color: var(--color-red);
     }
   }
 }
 
-.action {
+// .action {
   
-}
+// }
 
 .feedback {
   display: flex;
@@ -282,6 +283,7 @@ section,
 @import './layout/popup-custom';
 @import './layout/footer';
 
+@import './layout/accordion'; //
 @import './layout/menu'; //
 @import './layout/banner'; // 
 @import './layout/typography'; //

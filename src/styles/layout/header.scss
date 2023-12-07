@@ -79,7 +79,7 @@
     align-items: center;
     width: 140px;
     text-decoration: none;
-    margin-left: 18px;
+    // margin-left: 18px;
 
     @include viewport-phone {
       @media (max-width: 460px) {
@@ -112,7 +112,7 @@
   margin-top: px-to-rem(-10);
   margin-bottom: px-to-rem(-10);
   padding: 7px;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #eee;
   border-radius: 50px;
 
   &.desktop {
